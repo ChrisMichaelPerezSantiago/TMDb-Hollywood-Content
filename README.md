@@ -1,6 +1,5 @@
-# Hollywood Content
-
-> A Vue.js project
+# TMDb Hollywood Content
+-------------------------
 
 ## Build Setup
 
