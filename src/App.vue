@@ -25,7 +25,7 @@
 <style>
   #app{
     margin: 25px;
-    padding: 50px;
+    padding: 0px;
     font-family: sans-serif;
   }
 
@@ -54,4 +54,11 @@
   .fa-calendar-alt{
     color: peru;
   }
+  
+  #footer-card-icons{
+    font-size: 30px;
+    margin-left: 160px;
+    color: #081c24;
+  }
+
 </style>

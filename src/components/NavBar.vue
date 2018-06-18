@@ -1,7 +1,7 @@
 <template>
    <nav class="navbar" role="navigation" aria-label="dropdown navigation">  
         <a class="navbar-item">
-            <img src="https://www.themoviedb.org/static_cache/v4/logos/312x276-primary-blue-fb50dee3bf664c866fd216e6cee64af33d20707ea3091ddc65c5e8aa4c152eb2.png" alt="Logo"/>
+            <img src="https://www.themoviedb.org/static_cache/v4/logos/208x226-stacked-blue-e6df1ff1a41c48555a15336ae8a6b3c6f77dfae41d2a50b78e4794c1ce048792.png" alt="Logo"/>
         </a>
         
         <router-link class="navbar-item" to='/'>
