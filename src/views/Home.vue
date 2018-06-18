@@ -32,7 +32,6 @@
                 </div>
             </div>
         </div>
-        <div :name="chris"></div>
     </div>
 </template>
  
