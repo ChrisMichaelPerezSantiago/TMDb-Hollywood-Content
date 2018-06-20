@@ -3,6 +3,7 @@ import axios from 'axios'
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource'
 import Vuetify from 'vuetify'
+import VueCarousel from 'vue-carousel';
 
 
 import App from './App.vue'
@@ -15,7 +16,6 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
 
-
 Vue.component('nav-bar' , NavBar);
 Vue.component('app-footer' , Footer);
 
@@ -25,8 +25,7 @@ Vue.prototype.$http = axios;
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(Vuetify);
-
-
+Vue.use(VueCarousel);
 
 const routes = [
   {

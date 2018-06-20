@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    <hr>
+    
     <router-view></router-view>
     <app-footer></app-footer>
   </div>
@@ -32,15 +32,17 @@
   #poster-image{
     width: 70px;
     border-radius: 8px;
-
   }
+  
   .card{
+    background-color: #081c24 !important;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   #movie-title{
+    font-family: cursive; 
     color: #D4AF37;
   }
 
@@ -52,7 +54,7 @@
 
   .fa-star ,
   .fa-calendar-alt{
-    color: peru;
+    color: khaki
   }
   
   #footer-card-icons{
@@ -61,4 +63,28 @@
     color: #081c24;
   }
 
+  div.column{
+    display: inline-block;
+  }
+
+  .VueCarousel{
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }  
+  
+  .content{
+    height: 140px;
+    font-family: cursive; 
+  }
+
+  #overviews{
+    font-family: cursive; 
+    color: white;
+
+  }
+
+  .navbar{
+    font-family: cursive; 
+  }
 </style>

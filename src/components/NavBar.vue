@@ -26,13 +26,12 @@
         </div> 
 
          <div class="navbar-end">
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input"  placeholder="search ..."/>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input"  placeholder="search ..."/>
                     <span class="icon is-small is-right">
                         <i class="fas fa-search"></i>
                     </span>
                 </div>
-
             </div>       
     </nav> 
 </template>

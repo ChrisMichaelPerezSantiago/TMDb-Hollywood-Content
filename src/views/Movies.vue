@@ -6,7 +6,7 @@
 
 <script>
     export default{
-        props: [],
+        props: ['content'],
         data(){
             return{
                 title: 'Movie Section'
