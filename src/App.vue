@@ -22,7 +22,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   #app{
     margin: 25px;
     padding: 0px;
@@ -86,5 +86,25 @@
 
   .navbar{
     font-family: cursive; 
+  }
+
+  .control{
+    input{
+      padding: 4px 12px;
+      color: rgba(0,0,0,.70);
+      border: 1px solid rgba(0,0,0,.12);
+      transition: .15s all ease-in-out;
+      background: white;
+      &:focus {
+        outline: none;
+        transform: scale(1.05);
+       
+      }
+      &::-webkit-input-placeholder {
+          font-size: 12px;
+          color: rgba(0,0,0,.50);
+          font-weight: 100;
+      }
+    }
   }
 </style>

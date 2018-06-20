@@ -24,7 +24,7 @@
                 </router-link>
             </div>
         </div> 
-
+        <!--
          <div class="navbar-end">
             <div class="control has-icons-left has-icons-right">
                 <input class="input"  placeholder="search ..."/>
@@ -32,6 +32,29 @@
                         <i class="fas fa-search"></i>
                     </span>
                 </div>
-            </div>       
+            </div>    
+        -->
+        <app-search @userSearchArray='resultInput = $event'></app-search>
+        <!--<app-home :datas='resultInput'></app-home>-->
+
     </nav> 
 </template>
+
+
+<script>
+    import Search from './Search.vue'
+    import Home from '../views/Home.vue'
+
+    export default{
+        data(){
+            return{
+                resultInput: []
+            }
+        },
+
+        components:{
+            'app-search': Search,
+            'app-home': Home
+        }
+    }
+</script>

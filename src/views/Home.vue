@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container">    
         <!--
         <carousel 
             :perPage=1
@@ -54,7 +54,6 @@
  
 <script>
     import { Carousel, Slide } from 'vue-carousel';
-
     export default{
         data() {
             return{
@@ -67,7 +66,7 @@
                 components:{
                     Carousel,
                     Slide,
-                } 
+                }
             }
         },
         
