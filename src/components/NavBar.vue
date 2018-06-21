@@ -1,8 +1,8 @@
 <template>
    <nav class="navbar" role="navigation" aria-label="dropdown navigation">  
-        <a class="navbar-item">
+        <router-link class="navbar-item" to="/">
             <img src="https://www.themoviedb.org/static_cache/v4/logos/208x226-stacked-green-9484383bd9853615c113f020def5cbe27f6d08a84ff834f41371f223ebad4a3c.png" alt="Logo"/>
-        </a>
+        </router-link>
         
         <router-link class="navbar-item" to='/'>
             <span class="icon has-text-success"><i class="fas fa-home"></i></span>
