@@ -1,7 +1,7 @@
 <template>
    <nav class="navbar" role="navigation" aria-label="dropdown navigation">  
         <a class="navbar-item">
-            <img src="https://www.themoviedb.org/static_cache/v4/logos/208x226-stacked-blue-e6df1ff1a41c48555a15336ae8a6b3c6f77dfae41d2a50b78e4794c1ce048792.png" alt="Logo"/>
+            <img src="https://www.themoviedb.org/static_cache/v4/logos/208x226-stacked-green-9484383bd9853615c113f020def5cbe27f6d08a84ff834f41371f223ebad4a3c.png" alt="Logo"/>
         </a>
         
         <router-link class="navbar-item" to='/'>
@@ -24,6 +24,10 @@
                 </router-link>
             </div>
         </div> 
+        <router-link class="navbar-item" to='/Search'>
+            <span class="icon has-text-success"><i class="fas fa-search"></i></span>
+            <span>Search</span>
+         </router-link>
         <!--
          <div class="navbar-end">
             <div class="control has-icons-left has-icons-right">
@@ -33,9 +37,9 @@
                     </span>
                 </div>
             </div>    
-        -->
         <app-search @userSearchArray='resultInput = $event'></app-search>
-        <!--<app-home :datas='resultInput'></app-home>-->
+        <app-home :datas='resultInput'></app-home>
+        -->
 
     </nav> 
 </template>
@@ -43,7 +47,6 @@
 
 <script>
     import Search from './Search.vue'
-    import Home from '../views/Home.vue'
 
     export default{
         data(){
@@ -53,8 +56,7 @@
         },
 
         components:{
-            'app-search': Search,
-            'app-home': Home
+            'app-search': Search
         }
     }
 </script>

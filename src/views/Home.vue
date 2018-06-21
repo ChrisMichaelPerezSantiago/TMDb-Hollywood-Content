@@ -1,23 +1,23 @@
 <template>
+
     <div class="container">    
-        <!--
+        <br>
         <carousel 
             :perPage=1
             :navigationEnabled="false"
             :paginationEnabled="true"
             :autoplay="true"
-            :loop="false"
+            :loop="true"
         >
-            <slide v-for="content in contents.results" :key="content.id">
+            <slide v-for="content in contents.results" @click.prevent="setPage(conten)" :key="content.id">
                 <div class="card-image">
                     <figure class="image">
                         <img :src="imageUrl + content.backdrop_path" alt="Image">
                     </figure>
-                    
                 </div>
             </slide>
         </carousel>
-    -->
+    
 
         <div v-show="loaded" class="loader"></div>
         <div class="column is-one-third" v-for="content in contents.results" :key="content.id"> 
@@ -35,17 +35,15 @@
                             </figure>
                         </div>
                         <div class="media-content">
-                            <p id="movie-title" class="title is-4 no-padding">{{content.original_title}}</p>
+                            <p id="movie-title" class="title is-4 no-padding">{{content.title}}</p>
                             <p><span class="title is-6"><i class="fas fa-star">{{" " + content.vote_average}}</i></span></p>
-                            <p class="subtitle is-6"><i  class="fas fa-calendar-alt">{{" " + content.first_air_date}}</i></p>
+                            <p class="subtitle is-6"><i  class="fas fa-calendar-alt">{{" " + content.release_date}}</i></p>
                         </div>
                     </div>
                     <div id="overviews" class="content">
                         <p>{{ content.overview}}</p>
                         <div class="background-icon"><span class="icon-twitter"></span></div>
                     </div>
-        
-                      
                 </div>
             </div>
         </div>
@@ -65,7 +63,7 @@
 
                 components:{
                     Carousel,
-                    Slide,
+                    Slide
                 }
             }
         },
@@ -77,7 +75,7 @@
         methods:{
             fetchData: function(){
                 console.log('fetch data');
-                this.$http.get(this.baseurl + '/tv/on_the_air?api_key=' +
+                this.$http.get(this.baseurl + '/movie/now_playing?api_key=' +
                 this.apikey + '&language=en-US&page=1').then(response =>{
                     this.contents = response.body;
                     this.loaded = false;
@@ -86,4 +84,3 @@
         }
     }
 </script>
-

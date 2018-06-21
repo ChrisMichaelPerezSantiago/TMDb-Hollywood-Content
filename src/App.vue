@@ -27,6 +27,7 @@
     margin: 25px;
     padding: 0px;
     font-family: sans-serif;
+    background-color: #081c24;
   }
 
   #poster-image{
@@ -87,6 +88,10 @@
   .navbar{
     font-family: cursive; 
   }
+ 
+  .footer{
+    background-color: #081c24;
+  }
 
   .control{
     input{
@@ -98,6 +103,7 @@
       &:focus {
         outline: none;
         transform: scale(1.05);
+        border: #081c24;
        
       }
       &::-webkit-input-placeholder {
@@ -106,5 +112,9 @@
           font-weight: 100;
       }
     }
+  }
+
+  .control{
+    width: 100%;
   }
 </style>
