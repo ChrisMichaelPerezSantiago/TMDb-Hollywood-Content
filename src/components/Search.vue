@@ -12,7 +12,6 @@
 
 
 <script>
-    import axios from 'axios';
    
     export default{
         data(){
@@ -26,7 +25,7 @@
                 console.log('user searching!!'); 
                 var key = event.target.value;
                 const urlSearch = 'https://api.themoviedb.org/3/search/multi?api_key=16667866c29ba1bc29e687b4892b8d5c&language=en-US&page=1&include_adult=false&query=' + key
-                axios.get(urlSearch).then(response =>{
+                this.$http.get(urlSearch).then(response =>{
                     console.log('data fetched');
                     console.log(response.data.results);
                     this.searchResult = response.data.results;

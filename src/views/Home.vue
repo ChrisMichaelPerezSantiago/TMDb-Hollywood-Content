@@ -21,7 +21,8 @@
 
         <div v-show="loaded" class="loader"></div>
         <div class="column is-one-third" v-for="content in contents.results" :key="content.id"> 
-            <div class="card" >
+            <router-link :to="{name:'Content' , params:{id: content.id}}">
+            <div class="card">
                 <div class="card-image">
                     <figure class="image">
                         <img :src="imageUrl + content.backdrop_path" alt="Image">
@@ -46,6 +47,7 @@
                     </div>
                 </div>
             </div>
+            </router-link>
         </div>
     </div>
 </template>

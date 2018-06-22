@@ -4,7 +4,7 @@
         <app-search @userSearchArray='resultInput = $event'></app-search>
         <br>
         <div class="column is-9">
-			<div class="box content" v-for="(content , index) in resultInput" :key="index">
+			<div class="box content" v-for="content in resultInput" :key="content.id">
 				<article class="post">
 					<h4>{{content.title || content.name}}</h4>
 					<div class="media">
@@ -17,9 +17,9 @@
 							<div class="content">
 								<p>
 									<a href="#">@{{content.media_type}}</a> {{content.release_date || content.first_air_date }} &nbsp;
-                                    <router-link to=""><span class="tag button">info</span></router-link>
+                                    <router-link :to="{name:'Content' , params:{id: content.id}}"><span class="tag button">info</span></router-link>
 								</p>
-                                 {{content.overview.substr(0 , 100)}} ...
+                                <p id="overviews">{{content.overview.substr(0 , 100)}} ...</p>
 							</div>
 						</div>
 						<div class="media-right">
@@ -69,4 +69,10 @@
         overflow: hidden;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+
+    #overviews{
+        color: white;
+    }
+
+
 </style>

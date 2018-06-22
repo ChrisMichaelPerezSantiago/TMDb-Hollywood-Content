@@ -117,4 +117,8 @@
   .control{
     width: 100%;
   }
+
+  .fas.fa-info-circle{
+    margin-top: 80px;
+  }
 </style>

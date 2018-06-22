@@ -13,6 +13,7 @@ import Videos from './views/Videos.vue'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import UserSearch from './views/UserSearch.vue'
+import SearchContent from './views/SearchContent.vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
@@ -44,6 +45,10 @@ const routes = [
   },{
     path: '/Search',
     component: UserSearch
+  },{
+    path: '/Content',
+    name: 'Content',
+    component: SearchContent,
   }
 ];
 
