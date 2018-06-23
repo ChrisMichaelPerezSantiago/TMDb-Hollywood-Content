@@ -16,6 +16,7 @@
     "vue-carousel": "^0.8.1",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
+    "vuejs-paginate": "^1.9.3",
     "vuetify": "^1.0.19"
   },
   "browserslist": [

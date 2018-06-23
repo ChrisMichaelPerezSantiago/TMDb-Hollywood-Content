@@ -9,7 +9,7 @@
             :autoplay="true"
             :loop="true"
         >
-            <slide v-for="content in contents.results" @click.prevent="setPage(conten)" :key="content.id">
+            <slide v-for="content in contents.results" :key="content.id">
                 <div class="card-image">
                     <figure class="image">
                         <img :src="imageUrl + content.backdrop_path" alt="Image">
@@ -21,7 +21,7 @@
 
         <div v-show="loaded" class="loader"></div>
         <div class="column is-one-third" v-for="content in contents.results" :key="content.id"> 
-            <router-link :to="{name:'Content' , params:{id: content.id}}">
+            <router-link :to="{name: 'MoviesNowPlaying' , params:{id: content.id}}">
             <div class="card">
                 <div class="card-image">
                     <figure class="image">
@@ -49,17 +49,31 @@
             </div>
             </router-link>
         </div>
+
+        <paginate
+            :page-count="40"
+            :page-range="3"
+            :margin-pages="2"
+            :click-handler="fetchData"
+            :prev-text="'Prev'"
+            :next-text="'Next'"
+            :container-class="'pagination'"
+            :page-class="'page-item'">
+        </paginate>
+
     </div>
 </template>
  
 <script>
     import { Carousel, Slide } from 'vue-carousel';
+    import { apikey } from '../config/secrets.js';
+
     export default{
         data() {
             return{
                 contents: [],
                 baseurl: 'https://api.themoviedb.org/3',
-                apikey: '16667866c29ba1bc29e687b4892b8d5c',
+                apikey: apikey,
                 imageUrl: 'https://image.tmdb.org/t/p/w1280',
                 loaded: true,
 
@@ -75,10 +89,11 @@
         },
         
         methods:{
-            fetchData: function(){
+            fetchData: function(page = 1){
                 console.log('fetch data');
                 this.$http.get(this.baseurl + '/movie/now_playing?api_key=' +
-                this.apikey + '&language=en-US&page=1').then(response =>{
+                this.apikey + '&language=en-US&page=' + page).then(response =>{
+                    console.log(response.body);     
                     this.contents = response.body;
                     this.loaded = false;
                 });

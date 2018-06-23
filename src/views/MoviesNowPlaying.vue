@@ -1,33 +1,31 @@
 <template>
-    <div class="container">
+     <div class="container">
         <h1>Content id: {{this.id}}</h1>
-        <h1>Media type: {{this.media_type}} </h1>
         <p>{{contents}}</p>
     </div>
 </template>
 
 
 <script>
-    import {apikey} from '../config/secrets.js'
+    import {apikey} from '../config/secrets.js';
     export default{
         data(){
             return{
                 contents: [],
                 baseurl: 'https://api.themoviedb.org/3',
-                apikey: apikey,
                 imageUrl: 'https://image.tmdb.org/t/p/w1280',
-                id: this.$route.params.id,
-                media_type: this.$route.params.media_type
+                apikey: apikey,
+                id: this.$route.params.id
             }
         },
 
-        created: function(){      
-            console.log('instance created');
-            this.fetchMovieById();
+        created: function(){
+            console.log('instance create from movies data id');
+            this.fetchDataById();
         },
 
         methods:{
-            fetchMovieById: function(){
+            fetchDataById(){
                 console.log('fetch movie data by id');
                 this.$http.get(this.baseurl + '/movie/' + this.id + '?api_key=' +
                 this.apikey + '&language=en-US').then(response =>{
@@ -41,3 +39,5 @@
         }
     }
 </script>
+
+

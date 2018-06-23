@@ -24,7 +24,7 @@
 
 <style lang="scss">
   #app{
-    margin: 25px;
+    margin: auto;
     padding: 0px;
     font-family: sans-serif;
     background-color: #081c24;

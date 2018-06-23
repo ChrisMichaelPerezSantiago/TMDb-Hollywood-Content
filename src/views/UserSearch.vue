@@ -17,7 +17,7 @@
 							<div class="content">
 								<p>
 									<a href="#">@{{content.media_type}}</a> {{content.release_date || content.first_air_date }} &nbsp;
-                                    <router-link :to="{name:'Content' , params:{id: content.id}}"><span class="tag button">info</span></router-link>
+                                    <router-link :to="{name:'Content' , params:{media_type: content.media_type , id: content.id}}"><span class="tag button">info</span></router-link>
 								</p>
                                 <p id="overviews">{{content.overview.substr(0 , 100)}} ...</p>
 							</div>
@@ -35,17 +35,13 @@
 
 <script>
     import Search from '../components/Search.vue'
-
     export default{
         data(){
             return{
                 resultInput: [],
                 imageUrl: 'https://image.tmdb.org/t/p/w1280',
-
             }
         },
-
-        
 
         components:{
             'app-search': Search,
@@ -61,7 +57,6 @@
 
     h4{
         color: #D4AF37;
-
     }
 
     .box.content{
@@ -71,8 +66,7 @@
     }
 
     #overviews{
+        margin-top: -10px;
         color: white;
     }
-
-
 </style>
