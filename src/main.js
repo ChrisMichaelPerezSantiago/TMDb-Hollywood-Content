@@ -6,12 +6,12 @@ import Vuetify from 'vuetify'
 import VueCarousel from 'vue-carousel';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import Paginate from 'vuejs-paginate'
+import VueYoutube from 'vue-youtube'
+
 
 
 import App from './App.vue'
 import Home from './views/Home.vue'
-import Movies from './views/Movies.vue'
-import Videos from './views/Videos.vue'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import UserSearch from './views/UserSearch.vue'
@@ -32,20 +32,13 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(Vuetify);
 Vue.use(VueCarousel);
+Vue.use(VueYoutube);
 
 
 const routes = [
   {
     path: '/',
-    component: Home,
-  },
-  {
-    path: '/Movies',
-    component: Movies
-  },
-  {
-    path: '/Videos',
-    component: Videos
+    component: Home
   },{
     path: '/Search',
     component: UserSearch

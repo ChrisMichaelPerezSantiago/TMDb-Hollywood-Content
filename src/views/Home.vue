@@ -14,6 +14,10 @@
                     <figure class="image">
                         <img :src="imageUrl + content.backdrop_path" alt="Image">
                     </figure>
+
+                    <div class="media-content">
+                            <p id="movie-title" class="title is-4 no-padding">{{content.title}}</p>
+                    </div>
                 </div>
             </slide>
         </carousel>
@@ -90,10 +94,10 @@
         
         methods:{
             fetchData: function(page = 1){
-                console.log('fetch data');
+                //console.log('fetch data');
                 this.$http.get(this.baseurl + '/movie/now_playing?api_key=' +
                 this.apikey + '&language=en-US&page=' + page).then(response =>{
-                    console.log(response.body);     
+                   // console.log(response.body);     
                     this.contents = response.body;
                     this.loaded = false;
                 });

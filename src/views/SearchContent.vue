@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <h1>Content id: {{this.id}}</h1>
-        <h1>Media type: {{this.media_type}} </h1>
-        <p>{{contents}}</p>
+        <div class="card">
+             <youtube  :video-id="contents.results[0].key" :player-vars="playerVars" @playing="playing"></youtube>
+        </div>
     </div>
 </template>
 
@@ -17,26 +17,33 @@
                 apikey: apikey,
                 imageUrl: 'https://image.tmdb.org/t/p/w1280',
                 id: this.$route.params.id,
-                media_type: this.$route.params.media_type
+                media_type: this.$route.params.media_type,
+                playerVars:{
+                    autoplay: 1
+                }
             }
         },
 
         created: function(){      
-            console.log('instance created');
+            //console.log('instance created');
             this.fetchMovieById();
         },
 
         methods:{
             fetchMovieById: function(){
-                console.log('fetch movie data by id');
-                this.$http.get(this.baseurl + '/movie/' + this.id + '?api_key=' +
-                this.apikey + '&language=en-US').then(response =>{
-                    this.contents = response.body;
-                    console.log(this.contents);  
+                  //console.log('fetch movie data by id');
+                this.$http.get(this.baseurl + '/movie/' + this.id + '/videos?api_key=' +
+                this.apikey + '&append_to_response=videos').then(response =>{
+                    this.contents = response.data;
+                    //console.log(this.contents);  
                 })
                 .catch(e =>{
                     this.error.push(e)
                 });
+            },
+
+            playing(){
+                //console.log('video in action!!'); 
             }
         }
     }

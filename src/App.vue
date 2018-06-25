@@ -121,4 +121,8 @@
   .fas.fa-info-circle{
     margin-top: 80px;
   }
+  
+  .card{
+    margin-top: 20px;
+  }
 </style>
