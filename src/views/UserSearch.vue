@@ -19,7 +19,7 @@
 									<a href="#">@{{content.media_type}}</a> {{content.release_date || content.first_air_date }} &nbsp;
                                     <router-link :to="{name:'Content' , params:{media_type: content.media_type , id: content.id}}"><span class="tag button">info</span></router-link>
 								</p>
-                                <p id="overviews">{{content.overview.substr(0 , 100)}} ...</p>
+                                <p id="overviews">{{content.overview}} ...</p>
 							</div>
 						</div>
 						<div class="media-right">
