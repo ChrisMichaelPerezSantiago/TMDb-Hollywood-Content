@@ -19,7 +19,6 @@
     "vue-youtube": "^1.2.5",
     "vuejs-paginate": "^1.9.3",
     "vuetify": "^1.0.19",
-
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
