@@ -13,6 +13,7 @@
         data(){
             return{
                 contents: [],
+                movieDetails: [],
                 baseurl: 'https://api.themoviedb.org/3',
                 imageUrl: 'https://image.tmdb.org/t/p/w1280',
                 apikey: apikey,
@@ -47,3 +48,5 @@
         }
     }
 </script>
+
+
