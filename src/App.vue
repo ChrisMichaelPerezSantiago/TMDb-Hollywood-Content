@@ -28,6 +28,8 @@
     padding: 0px;
     font-family: sans-serif;
     background-color: #081c24;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   #poster-image{
